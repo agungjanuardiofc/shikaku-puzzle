@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Shikaku Puzzle
 
-# Run and deploy your AI Studio app
+A minimalist, responsive logic puzzle game with auto-generated levels and progressive difficulty.
 
-This contains everything you need to run your app locally.
+## Overview
+Shikaku (also known as Rectangles) is a logic puzzle with simple rules and challenging solutions. The goal is to divide the grid into rectangular and square pieces such that each piece contains exactly one number, and that number represents the area of the rectangle.
 
-View your app in AI Studio: https://ai.studio/apps/fb2a9b1d-709d-4670-bb4c-d7a2f23ffc39
+## Features
+- **Auto-generated levels**: Infinite puzzles at various difficulty levels.
+- **Progressive difficulty**: Starts easy and scales up as you play.
+- **Minimalist Design**: Clean and responsive UI using Tailwind CSS and React.
 
-## Run Locally
+## How to Play
+1. The grid contains some numbers.
+2. Divide the grid into rectangles and squares.
+3. Each rectangle must contain exactly one number.
+4. The number indicates how many cells are contained within that rectangle.
 
-**Prerequisites:**  Node.js
-
+## Local Development
+To run this project locally:
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and navigate to the local URL provided in the terminal (usually `http://localhost:3000` or `http://localhost:5173`).

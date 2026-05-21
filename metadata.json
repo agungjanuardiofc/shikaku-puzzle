@@ -2,5 +2,5 @@
   "name": "Shikaku Puzzle",
   "description": "A minimalist, responsive logic puzzle game with auto-generated levels and progressive difficulty.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }
