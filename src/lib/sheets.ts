@@ -86,12 +86,27 @@ export async function getTop10Scores(): Promise<{name: string, timeMs: number}[]
         const data = await res.json();
         const rows = data.values || [];
         
-        return rows
+        const allScores = rows
             .map((row: any[]) => ({
                 name: row[0] || 'Unknown',
                 timeMs: parseInt(row[1] || '0', 10)
             }))
-            .filter((item) => !isNaN(item.timeMs) && item.timeMs > 0)
+            .filter((item) => !isNaN(item.timeMs) && item.timeMs > 0);
+
+        const bestScoresMap = new Map<string, number>();
+        for (const score of allScores) {
+            const currentBest = bestScoresMap.get(score.name);
+            if (currentBest === undefined || score.timeMs < currentBest) {
+                bestScoresMap.set(score.name, score.timeMs);
+            }
+        }
+
+        const uniqueScores = Array.from(bestScoresMap.entries()).map(([name, timeMs]) => ({
+            name,
+            timeMs
+        }));
+
+        return uniqueScores
             .sort((a, b) => a.timeMs - b.timeMs)
             .slice(0, 10);
     } catch (e) {
